@@ -50,7 +50,7 @@ Before running NairoBus locally, you will need:
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/YOUR-USERNAME/nairobus.git
+git clone https://github.com/cgathiri/nairobus.git
 cd nairobus
 ```
 ### 2. Install dependencies
