@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NairoBus | Admin Panel</title>
+    <!-- responsive scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- poppins font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="admin-dashboard.html" class="brand">
+            <img src="assets/nairobus logo.png" class="logo-small">
+            <span class="brand-name">NairoBus Admin</span>
+        </a>
+    </div>
+
+    <div class="nav-right">
+        <div class="dropdown">
+            <button class="icon-btn">⚙️</button>
+            <div class="dropdown-content">
+                <button id="logOutBtn">Log Out</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section class="main-content-admin">
+    <div class="welcome-message">
+        <h4>Welcome!</h4>
+    </div>
+
+    <div class="admin-top-row">
+    
+        <!-- route form -->
+        <div class="route-card">
+            <h4>Route Management</h4>
+            <h3>Add and Delete Routes</h3>
+
+            <form id="routeForm">
+                <input type="text" name="route_name" placeholder="Route Name, e.g. Route 1" required>
+                <div class="destination-row">
+                    <input type="text" name="start_stop" placeholder="Start Destination" required>
+                    <input type="text" name="end_stop" placeholder="End Destination" required>
+                </div>
+
+                <button type="submit">Add Route</button>
+                <p class="server-message"></p>
+
+                <select id="deleteRouteSelect">
+                    <option value="">Select Route to Delete</option>
+                </select>
+                <button type="button" id="deleteRouteBtn">Delete Route</button>
+                <p class="server-message"></p>
+           </form>
+        </div>
+
+        <!-- schedule form -->
+        <div class="schedule-card">
+            <h4>Schedule Management</h4>
+            <h3>Create Schedules</h3>
+
+            <form id="scheduleForm">
+                <!-- <label>Select Route</label> -->
+                <select name="route_id" id="routeSelect" required>
+                    <option value="">Select Route</option>
+                </select>
+
+                <label>Departure Time</label>
+                <input type="time" name="departure_time" required>
+
+                <label>Arrival Time</label>
+                <input type="time" name="arrival_time" required>
+
+                <button type="submit">Add Schedule</button>
+                <p class="server-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="admin-bottom-row">
+        <!-- view existing route schedules-->
+        <div class="schedule-viewer-card">
+            <h4>Route Schedule Management</h4>
+            <h3>View and Delete Existing Route Schedules</h3>
+
+            <select id="viewRouteSelect">
+                <option value="">Select Route</option>
+            </select>
+
+            <button id="viewSchedulesBtn">View Schedules</button>
+
+            <div id="scheduleList"></div>
+            <p class="server-message"></p>
+        </div>
+
+        <!-- generate route reports -->
+        <div class="report-card">
+            <h4>Route Analytics</h4>
+            <h3>Generate Route Reports</h3>
+
+            <select id="reportRouteSelect">
+                <option value="">Select Route</option>
+            </select>
+
+            <button id="generateReportBtn">Generate Report</button>
+
+            <div id="reportOutput"></div>
+        </div>
+    </div>
+
+</section>
+
+<footer class="footer">
+    <p>© NairoBus 2026</p>
+</footer>
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>

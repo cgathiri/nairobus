@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NairoBus | Home</title>
+    
+    <!-- poppins font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- leaflet map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <!-- leaflet routing machine -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="home.html" class="brand">
+            <img src="assets/nairobus logo.png" class="logo-small" alt="NairoBus Logo">
+            <span class="brand-name">NairoBus Home</span>
+        </a>
+    </div>
+    
+    <div class="nav-right">
+        <!-- <div class = "dropdown">
+            <button class = "icon-btn">👤</button>
+            <div class = "dropdown-content">
+                <a href = "#">User Profile</a>
+                <a href = "#">Log Out</a>
+            </div>
+        </div> -->
+
+        <div class="dropdown">
+            <button class="icon-btn">⚙️</button>
+            <div class="dropdown-content">
+                <button id="logOutBtn">Log Out</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <h2>Matatu schedules, at your fingertips.</h2>
+</section>
+
+<section class="main-content">
+    <div class="planner-card">
+        <h4>Welcome!</h4> <!-- rem to write code for displaying user's name in home.js -->
+        <h3>Plan your Journey</h3>
+
+        <select id="routeSelectHome">
+            <option value="">Select Route</option>
+        </select>
+
+        <button id="viewSchedulesHomeBtn">View Available Schedules</button>
+
+        <div id="routeResults"></div>
+    </div>
+
+    <div class="map-container">
+        <div id="map"></div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© NairoBus 2026</p>
+</footer>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+<script src="js/home.js"></script>
+
+</body>
+</html>

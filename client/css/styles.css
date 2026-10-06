@@ -1,0 +1,542 @@
+/* theme color variables */
+:root {
+    --primary-orange: #f59a2e;
+    --deeper-orange: #e5810b;
+    --soft-orange-bg: #fff4e6;
+    --light-warm-bg: #fdf8f2;
+    --light-gray: #f7f7f7;
+    --text-dark: #333;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-warm-bg);
+    margin: 0;
+}
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* auth containers */
+.login-container {
+    background: white;
+    padding: 40px;
+    width: 350px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.signup-container {
+    background: white;
+    padding: 40px;
+    width: 600px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+/* Logo */
+.logo {
+    width: 90px;
+    margin-bottom: 5px;
+}
+
+/* Headings */
+h1 {
+    color: var(--primary-orange);
+    margin-bottom: 5px;
+}
+
+.form-title {
+    margin: 20px 0 15px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 2px rgba(245, 154, 46, 0.2);
+}
+
+/* name & password input rows on signup, destination input on admin dash */
+.name-row,
+.password-row,
+.destination-row {
+    display: flex;
+    gap: 10px;
+}
+
+.name-row .input-group,
+.password-row .input-group,
+.destination-row input {
+    flex: 1;
+}
+
+.password-wrapper {
+  position: relative; /* this allows the toggle button to be positioned inside the input field */
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 60px;
+}
+
+.toggle-password {
+  position: absolute; /* this places the "show"/"hide" toggles inside the input field */
+  right: 15px;
+  top: 11px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--deeper-orange);
+  user-select: none;
+}
+
+.toggle-password:hover {
+  text-decoration: underline;
+}
+
+/* validation messages */
+#emailMessage,
+#passwordMessage {
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.form-message {
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/* buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-orange);
+    border: none;
+    border-radius: 16px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--deeper-orange);
+    transform: scale(1.05);
+}
+
+/* sign-up redirection on login page */
+.signup-text {
+    margin-top: 18px;
+    font-size: 13px;
+    color: #666;
+}
+
+.signup-text a {
+    color: var(--primary-orange);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+    color: var(--deeper-orange);
+}
+
+/* HOME & ADMIN PAGE STYLING */
+/* nav bar */
+.logo-small {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-left .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-left .brand-name {
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: none; /* hidden by default until user clicks the settings button */
+    flex-direction: column;
+    min-width: 150px;
+    padding: 10px 0;
+}
+
+#logOutBtn {
+    width: 100%;
+    padding: 8px 15px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.dropdown-content a,
+.dropdown-content button {
+    padding: 8px 15px;
+    text-decoration: none;
+    color: var(--text-dark);
+    background: none;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.dropdown-content a:hover,
+.dropdown-content button:hover {
+    background-color: var(--soft-orange-bg);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background-color: white;
+    border-bottom: 2px solid var(--primary-orange);
+    position: sticky;
+    top: 0; /* defines "sticking point" */
+    z-index: 5000; /* high to ensure navbar stays above all other elements when scrolling */
+}
+
+.navbar a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: var(--primary-orange);
+}
+
+/* hero section */
+.hero {
+    background-color: var(--soft-orange-bg);
+    padding: 40px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* main content */
+.main-content {
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+}
+
+.main-content-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px;
+}
+
+.planner-card {
+    flex: 3;
+    background-color: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.route-card,
+.schedule-card,
+.schedule-viewer-card,
+.report-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    flex: 1;
+}
+
+.planner-card h4,
+.route-card h4,
+.schedule-card h4,
+.schedule-viewer-card h4,
+.report-card h4 {
+    color: var(--deeper-orange);
+    text-align: center;
+}
+
+.planner-card h3,
+.route-card h3,
+.schedule-card h3,
+.schedule-viewer-card h3,
+.report-card h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 5px;
+    color: var(--text-dark);
+}
+
+.planner-card select,
+.route-card input,
+.route-card select,
+.schedule-card input,
+.schedule-card select,
+.schedule-viewer-card select,
+.report-card select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    font-family: 'Poppins', sans-serif; /* this ensures consistent font wwithin input and select elements */
+}
+
+.schedule-card select,
+.schedule-viewer-card select,
+.planner-card select,
+.report-card select,
+.route-card select {
+    border: 1px solid #ddd;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23666"><polygon points="0,0 16,0 8,10"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px top 17px;
+    background-size: 12px;
+}
+
+.schedule-card select:focus,
+.schedule-viewer-card select:focus,
+.planner-card select:focus,
+.report-card select:focus,
+.route-card select:focus {
+    outline: none;
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 2px rgba(245, 154, 46, 0.2);
+}
+
+label {
+    display: block;
+    margin-left: 12px;
+    margin-bottom: 0px;
+    font-weight: 500;
+    color: #666;
+    font-size: 12px;
+}
+
+.admin-top-row,
+.admin-bottom-row {
+    display: flex;
+    gap: 30px;
+}
+
+.schedule-table,
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.schedule-table th,
+.report-table th {
+    background-color: var(--soft-orange-bg);
+    color: var(--deeper-orange);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px;
+    text-align: center;
+}
+
+.schedule-table td,
+.report-table td {
+    padding: 5px;
+    font-size: 13px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.schedule-table tr:hover,
+.report-table tr:hover {
+    background-color: #fafafa;
+}
+
+.schedules-message,
+.reports-message {
+    font-size: 13px;
+    font-weight: 500;
+    color: red;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.delete-btn {
+    width: 70%;
+    padding: 8px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#deleteRouteBtn {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 16px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.delete-btn:hover,
+#deleteRouteBtn:hover {
+    background-color: #e60000;
+}
+
+.server-message { /* feedback for adding and deleting routes and schedules */
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 15px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.server-message.success {
+    color: green;
+}
+
+.server-message.error {
+    color: red;
+}
+
+.map-container {
+    flex: 4;
+    min-width: 0; /* allows map to shrink properly within flex layout */
+    background-color: var(--light-gray);
+    border-radius: 16px;
+    overflow: hidden;
+    min-height: 350px;
+    height: 400px;
+    box-shadow: inset 0 0 0 2px #eee;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+}
+
+.footer {
+    background-color: var(--primary-orange);
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* responsive stacking for smaller screens */
+@media (max-width: 768px) {
+    .main-content,
+    .admin-top-row,
+    .admin-bottom-row {
+        flex-direction: column;
+    }
+
+    .map-container {
+        height: 350px;
+        width: 100%;
+    }
+
+    .auth-page {
+        padding: 20px;
+    }
+
+    .login-container,
+    .signup-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 30px 25px;
+        border-radius: 12px;
+    }
+
+    .name-row,
+    .password-row {
+        flex-direction: column;
+    }
+}
